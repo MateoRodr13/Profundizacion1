@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Profundizacion1</string>
+    <string name="title">Renta Carros</string>
+    <string name="title2">Bienvenidos</string>
+    <string name="subTitle">Ingrese su información</string>
+    <string name="emailTitle">Email</string>
+    <string name="passwordTitle">Contraseña</string>
+    <string name="textCheck">Recordar</string>
+    <string name="passwordRememberTitle">Se olvido la contraseña</string>
+    <string name="loginButton">INGRESAR</string>
+    <string name="logoutButton">CERRAR SESIÓN</string>
+    <string name="registerButton">REGISTRAR</string>
+    <string name="loginButtonSocial">Ingresar con:</string>
+    <string name="registro">Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="cedula">Cedula</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="email">Email</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="titleWelcome">Bienvenido </string>
+</resources>

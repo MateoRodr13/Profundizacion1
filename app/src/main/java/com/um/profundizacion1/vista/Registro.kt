@@ -28,15 +28,18 @@ class Registro : AppCompatActivity() {
             var name = name_create.text.toString().trim()
             var lastname = lastname_create.text.toString().trim()
             var identifier = identifier_create.text.toString().trim()
-            var identifierInt: Int = identifier.toInt()
             var city = cityCreate.text.toString().trim()
             var email = email_create.text.toString().trim()
             var password = password_create.text.toString().trim()
 
-            val usuario : Usuario = Usuario(name, lastname, identifierInt, city, email, password)
-
-            val resultado : Resultado = Controlador.registrar(usuario, this)
-            mostrarMensaje(resultado)
+            if (identifier.isNotEmpty()){
+                var identifierInt = identifier.toInt()
+                val usuario : Usuario = Usuario(name, lastname, identifierInt, city, email, password)
+                val resultado : Resultado = Controlador.registrar(usuario, this)
+                mostrarMensaje(resultado)
+            }else{
+                mostrarMensaje(Resultado.REGISTRO_ERROR)
+            }
 
         }
 

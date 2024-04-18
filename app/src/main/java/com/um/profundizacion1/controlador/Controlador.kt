@@ -26,20 +26,6 @@ object Controlador{
     private val usuariosRegistrados: MutableList<Usuario> = mutableListOf()
 
     fun ingresar(usuario: Usuario, context: Context): Resultado {
-        /*if (usuario.email.isEmpty()){
-            return Resultado.VALIDACION_ERROR
-        }
-        if (usuario.password.isEmpty()){
-            return Resultado.VALIDACION_ERROR
-        }
-
-        for (usuarioAuxiliar in usuariosRegistrados){
-            if (usuarioAuxiliar.email == usuario.email && usuarioAuxiliar.password == usuario.password){
-                val intent = Intent(context, Panel::class.java)
-                context.startActivity(intent)
-                return Resultado.INGRESO_EXITOSO
-            }
-        }*/
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
@@ -62,15 +48,16 @@ object Controlador{
     }
 
     fun registrar(usuario: Usuario, context: Context): Resultado {
-        if (usuario.name.isEmpty() || usuario.lastname.isEmpty() || usuario.id.toString().isEmpty() || usuario.email.isEmpty() || usuario.password.isEmpty()){
-            return Resultado.VALIDACION_ERROR
-        }
 
-        /*for (usuarioAuxiliar in usuariosRegistrados){
-            if (usuarioAuxiliar.email == usuario.email){
-                return Resultado.USUARIO_EXISTENTE
-            }
-        }*/
+        if (usuario.name == ""
+            || usuario.lastname.isEmpty()
+            || usuario.id.toString().isEmpty()
+            || usuario.email.isEmpty()
+            || usuario.password.isEmpty()){
+
+            return Resultado.VALIDACION_ERROR
+
+        }
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         val email = preferences.getString("email", "")

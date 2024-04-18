@@ -21,12 +21,15 @@ class Panel : AppCompatActivity() {
 
         val allPreferences = Controlador.mostrarDatos(this)
 
-        var name = allPreferences.getValue("name").toString() + " " + allPreferences.getValue("lastname").toString()
+        var name =
+            allPreferences.getValue("name").toString() + " " + allPreferences.getValue("lastname")
+                .toString()
         val textViewNombreUsuario = findViewById<TextView>(R.id.textViewNombreUsuario)
         textViewNombreUsuario.text = name
 
         var id = allPreferences.getValue("id").toString()
-        val textViewIdentificacionUsuario = findViewById<TextView>(R.id.textViewIdentificacionUsuario)
+        val textViewIdentificacionUsuario =
+            findViewById<TextView>(R.id.textViewIdentificacionUsuario)
         textViewIdentificacionUsuario.text = id
 
         var city = allPreferences.getValue("city").toString()
@@ -37,14 +40,17 @@ class Panel : AppCompatActivity() {
         val textViewCorreoUsuario = findViewById<TextView>(R.id.textViewCorreoUsuario)
         textViewCorreoUsuario.text = email
 
-        val btn_logout : Button = findViewById(R.id.btn_Logout)
+        val btn_logout: Button = findViewById(R.id.btn_Logout)
 
         btn_logout.setOnClickListener {
             val accion = Intent(this, Inicio::class.java)
+            accion.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(accion)
+            finish()
         }
 
+    }
 
-
+    override fun onBackPressed() {
     }
 }
